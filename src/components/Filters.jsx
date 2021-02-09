@@ -1,9 +1,5 @@
 import React,{Component} from 'react';
 import { withStyles,Select,MenuItem,TextField,Typography,Button } from '@material-ui/core';
-// import Select from '@material-ui/core/Select';
-// import MenuItem from '@material-ui/core/MenuItem';
-// import TextField from '@material-ui/core/TextField';
-// import Typography from '@material-ui/core/Typography';
 
 const styles = {
   range: {
@@ -18,30 +14,40 @@ class Filters extends Component {
         this.props = props;
 
         this.state = {
-            model            : "",
-            brand            : "",
-            filteredProducts : []
+            minRange : "",
+            maxRange : ""
         }
     }
 
-    componentDidMount() {
+    addFilter = (e) => {
 
+        if(e.name == "rangeMin"){
+            this.setState({minRange : e.value});
+        }
+        else if(e.name == "rangeMax"){
+            this.setState({maxRange : e.value});
+        }
     }
-
-    // addFilter = (e) => {
-    //     console.log(e.name);
-    //     console.log(e.value)
-
-    //     if(e.name == "model"){
-    //         this.setState({model : e.value});
-    //     }
-    //     else if(e.name == "brand"){
-    //         this.setState({brand : e.value});
-    //     }
-    // }
 
     applyFilters = () => {
 
+        let filteredItems = this.props.products;
+
+        if(this.state.minRange && this.state.maxRange){
+            filteredItems = this.filterProductsByPriceRange();
+        }
+
+        this.props.updateFilteredProducts(filteredItems);
+    }
+
+    filterProductsByPriceRange = () => {
+        let {products} = this.props;
+
+        products = products.filter((item) => {
+            return item.price > this.state.minRange && item.price < this.state.maxRange
+        });
+
+        return products;
     }
 
     render(){
@@ -55,19 +61,19 @@ class Filters extends Component {
                 id      = "outlined-name"
                 label   = "Min"
                 // className={classes.range}
-                // value={rangeMin}
+                value   = {this.state.minRange}
                 name    = "rangeMin"
                 margin  = "normal"
                 variant = "outlined"
-                // onChange={e => addFilter(e.target)}
+                onChange={e => this.addFilter(e.target)}
             />
             <TextField
               id      ="outlined-name"
               label   ="Max"
               name    ="rangeMax"
               // className={classes.range}
-              // value={rangeMax}
-              // onChange={e => addFilter(e.target)}
+              value   = {this.state.maxRange}
+              onChange={e => this.addFilter(e.target)}
               margin  ="normal"
               variant ="outlined"
             />
