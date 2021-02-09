@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { withStyles,Select,MenuItem,TextField,Typography,Button } from '@material-ui/core';
+import { withStyles,Select,MenuItem,TextField,Typography,Button,InputLabel} from '@material-ui/core';
 
 const styles = {
   range: {
@@ -15,7 +15,36 @@ class Filters extends Component {
 
         this.state = {
             minRange : "",
-            maxRange : ""
+            maxRange : "",
+            brand    : "",
+            brandsList : []
+        }
+    }
+
+    componentDidMount(){
+        let brands = [];
+
+        this.props.products.forEach(item => {
+            if(brands.includes(item.brand) == false){
+                brands.push(item.brand);
+            }
+        });
+
+        this.setState({brandsList : brands});
+    }
+
+    componentDidUpdate(prevProps, prevState){
+
+        if (prevProps.products !== this.props.products) {
+            let brands = [];
+
+            this.props.products.forEach(item => {
+                if(brands.includes(item.brand) == false){
+                    brands.push(item.brand);
+                }
+            });
+
+            this.setState({brandsList : brands});
         }
     }
 
@@ -27,6 +56,9 @@ class Filters extends Component {
         else if(e.name == "rangeMax"){
             this.setState({maxRange : e.value});
         }
+        else if(e.name == "brand"){
+            this.setState({brand : e.value});
+        }
     }
 
     applyFilters = () => {
@@ -34,17 +66,35 @@ class Filters extends Component {
         let filteredItems = this.props.products;
 
         if(this.state.minRange && this.state.maxRange){
-            filteredItems = this.filterProductsByPriceRange();
+            filteredItems = this.filterProductsByPriceRange(filteredItems);
+        }
+        if(this.state.brand){
+            filteredItems = this.filterProductsByBrand(filteredItems);
         }
 
         this.props.updateFilteredProducts(filteredItems);
     }
 
-    filterProductsByPriceRange = () => {
-        let {products} = this.props;
+    clearFilters = () => {
+        
+        this.setState({minRange : "", maxRange : "", brand : ""});
+
+        this.props.updateFilteredProducts(this.props.products);
+    }
+
+    filterProductsByPriceRange = (products) => {
 
         products = products.filter((item) => {
             return item.price > this.state.minRange && item.price < this.state.maxRange
+        });
+
+        return products;
+    }
+
+    filterProductsByBrand = (products) => {
+
+        products = products.filter((item) => {
+            return item.brand.includes(this.state.brand);
         });
 
         return products;
@@ -79,38 +129,31 @@ class Filters extends Component {
             />
             <br/>
             <br/>
-            {
-            /*<Typography component="h3" variant="subtitle2" color="inherit">
-              Brand
-            </Typography>
-            <TextField
-                id      = "outlined-brand"
-                label   = "Brand"
-                value   = {this.state.brand}
-                name    = "brand"
-                margin  = "normal"
-                variant = "outlined"
+            <InputLabel id="brandLabel">Brand</InputLabel>
+            <Select
+                labelId="brandLabel"
+                id="brand"
+                value={this.state.brand}
+                name="brand"
                 onChange={e => this.addFilter(e.target)}
-            />
-            <br/>
-            <br/>
-            <Typography component="h3" variant="subtitle2" color="inherit">
-              Model
-            </Typography>
-            <TextField
-                id      = "outlined-model"
-                label   = "Model"
-                value   = {this.state.model}
-                name    = "model"
-                margin  = "normal"
-                variant = "outlined"
-                onChange={e => this.addFilter(e.target)}
-            />*/
-            }
+            >
+                {
+                    this.state.brandsList.map((item,index) => {
+                        return(
+                            <MenuItem value={item} key={index}>{item}</MenuItem>
+                        )
+                    })
+                }
+            </Select>
             <br/>
             <br/>
             <Button variant="contained" color="primary" onClick={this.applyFilters}>
-              Apply Filters
+                Apply Filters
+            </Button>
+            <br/>
+            <br/>
+            <Button variant="contained" color="primary" onClick={this.clearFilters}>
+                Clear Filters
             </Button>
             </>
         )
