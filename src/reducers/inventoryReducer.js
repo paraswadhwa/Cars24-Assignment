@@ -10,7 +10,15 @@ export default function (state = initialState, action) {
         
         return { 
             ...state, 
-            products: action.payload 
+            products         : action.payload,
+            filteredProducts : action.payload
+        };
+
+    case actionTypes.UPDATE_FILTERED_PRODUCTS:
+        
+        return { 
+            ...state,
+            filteredProducts : action.payload
         };
 
     default:

@@ -7,3 +7,11 @@ export const fetchProducts = (data) => {
     	payload : data 
     };
 }
+
+export const updateFilteredProducts = (data) => {
+    
+    return { 
+    	type    : actionTypes.UPDATE_FILTERED_PRODUCTS, 
+    	payload : data 
+    };
+}

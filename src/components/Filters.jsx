@@ -26,50 +26,21 @@ class Filters extends Component {
 
     componentDidMount() {
 
-        // const { inventoryReducer } = this.props;
-
-        // if(inventoryReducer.hasOwnProperty('products') === true && inventoryReducer.products.length > 0){
-        //     this.setState({productsList : inventoryReducer.products});
-        // }
-        // else if(inventoryReducer.hasOwnProperty('products') === true && inventoryReducer.products.length === 0){
-        //     // do  nothing - no products found
-        // }
-        // else {
-        //     this.props.fetchProducts();
-        // }
     }
 
-    addFilter = (e) => {
-        console.log(e.name);
-        console.log(e.value)
+    // addFilter = (e) => {
+    //     console.log(e.name);
+    //     console.log(e.value)
 
-        if(e.name == "model"){
-            this.setState({model : e.value});
-        }
-        else if(e.name == "brand"){
-            this.setState({brand : e.value});
-        }
-    }
+    //     if(e.name == "model"){
+    //         this.setState({model : e.value});
+    //     }
+    //     else if(e.name == "brand"){
+    //         this.setState({brand : e.value});
+    //     }
+    // }
 
     applyFilters = () => {
-
-        let brandFilter = false;
-        let modelFilter = false;
-        let priceRangeFilter = false;
-
-        if(this.state.brand != ""){
-            brandFilter = true;
-        }
-        if(this.state.model != ""){
-            modelFilter = true;
-        }
-
-        if(brandFilter == true){
-
-        }
-        if(modelFilter == true){
-
-        }
 
     }
 
@@ -81,13 +52,13 @@ class Filters extends Component {
               Price Range
             </Typography>
             <TextField
-                id      ="outlined-name"
-                label   ="Min"
+                id      = "outlined-name"
+                label   = "Min"
                 // className={classes.range}
                 // value={rangeMin}
-                name    ="rangeMin"
-                margin  ="normal"
-                variant ="outlined"
+                name    = "rangeMin"
+                margin  = "normal"
+                variant = "outlined"
                 // onChange={e => addFilter(e.target)}
             />
             <TextField

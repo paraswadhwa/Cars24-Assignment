@@ -1,19 +1,20 @@
 import * as actions from './index';
 
-// export const filterProducts = (products, size) => (dispatch) => {
-//   dispatch({
-//     type: FILTER_PRODUCTS_BY_SIZE,
-//     payload: {
-//       size: size,
-//       items:
-//         size === ""
-//           ? products
-//           : products.filter(
-//               (x) => x.availableSizes.indexOf(size.toUpperCase()) >= 0
-//             ),
-//     },
-//   });
-// };
+export const filterProducts = (products, size) => (dispatch) => {
+
+    dispatch({
+        type: FILTER_PRODUCTS_BY_BRAND,
+        payload: {
+          size: size,
+          items:
+            size === ""
+              ? products
+              : products.filter(
+                  (x) => x.availableSizes.indexOf(size.toUpperCase()) >= 0
+                ),
+        },
+      });
+    };
 
 // export const sortProducts = (items, sort) => (dispatch) => {
 //   const products = items.slice();

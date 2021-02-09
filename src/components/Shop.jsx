@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { withStyles,Grid,TextField } from '@material-ui/core';
 import Product from './Product';
+import SearchBox from './SearchBox';
 
 const styles = theme => ({
     root: {
@@ -22,15 +23,12 @@ class ShopComponent extends Component {
 
     componentDidMount() {
 
-        const { inventoryReducer } = this.props;
+        const { filteredProducts } = this.props;
 
-        if(inventoryReducer.hasOwnProperty('products') === true && inventoryReducer.products.length > 0){
+        if(filteredProducts && filteredProducts.length > 0){
             this.setState({
-                filteredProductsList : inventoryReducer.products
+                filteredProductsList : filteredProducts
             });
-        }
-        else if(inventoryReducer.hasOwnProperty('products') === true && inventoryReducer.products.length === 0){
-            // do  nothing - no products found
         }
         else {
             this.props.fetchProducts();
@@ -39,41 +37,23 @@ class ShopComponent extends Component {
 
     componentDidUpdate(prevProps, prevState) {
 
-        if (prevProps.inventoryReducer.products !== this.props.inventoryReducer.products) {
-            if(this.props.inventoryReducer.products){
+        if (prevProps.filteredProducts !== this.props.filteredProducts) {
+            if(this.props.filteredProducts){
                 this.setState({
-                    filteredProductsList : this.props.inventoryReducer.products
+                    filteredProductsList : this.props.filteredProducts
                 });
             }
         }
-    }
-
-    updateSearchTerm = (e) => {
-
-        const searchTerm = e.target.value ? e.target.value.toLowerCase() : "";
-
-        const {inventoryReducer : {products}} = this.props;
-
-        let filteredProducts = products.filter((item) => {
-            return item && (item.brand && item.brand.toLowerCase().includes(searchTerm) == true || item.model && item.model.toLowerCase().includes(searchTerm) === true);
-        });
-
-        this.setState({searchTerm : searchTerm ,filteredProductsList : filteredProducts});
     }
     
     render() {
         const { classes } = this.props;
         return (
             <div className={classes.root}>
-                <TextField
-                    id      = "outlined-search"
-                    label   = "Search"
-                    // className={classes.range}
-                    value   = {this.state.searchTerm}
-                    name    = "searchBox"
-                    margin  = "normal"
-                    variant = "outlined"
-                    onChange={(e) => this.updateSearchTerm(e)}
+                <SearchBox 
+                    filteredProducts       = {this.props.filteredProducts}
+                    products               = {this.props.products}
+                    updateFilteredProducts = {this.props.updateFilteredProducts}
                 />
                 <Grid container spacing={16}> 
                     {this.state.filteredProductsList.map(item => (

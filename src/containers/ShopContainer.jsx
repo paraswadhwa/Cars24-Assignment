@@ -3,7 +3,8 @@ import { withRouter }       from 'react-router-dom';
 import Shop              	from '../components/Shop';
 
 import { 
-    fetchProducts
+    fetchProducts,
+    updateFilteredProducts
 }                           from "../actions/productActions";
 
 
@@ -15,7 +16,8 @@ const mapStateToProps = state => {
     const { inventoryReducer } = state;
 
     return {
-        inventoryReducer
+        filteredProducts : inventoryReducer.filteredProducts,
+        products 		 : inventoryReducer.products
     }
 };
 
@@ -23,6 +25,9 @@ const mapDispatchToProps = dispatch => ({
 
     fetchProducts() {
         dispatch(fetchProducts());
+    },
+    updateFilteredProducts(data) {
+        dispatch(updateFilteredProducts(data));
     }
 
 });

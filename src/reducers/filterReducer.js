@@ -5,29 +5,23 @@ const initialState = {};
 export default function (state = initialState, action) {
 
   switch (action.type) {
-    
-    case actionTypes.FETCH_PRODUCTS:
-        
-        return { 
-            ...state, 
-            products: action.payload 
-        };
 
-    case actionTypes.CHANGE_PRICE:
+    case actionTypes.FILTER_PRODUCTS_BY_SIZE_PRICE_RANGE:
 
       	return {
         	...state,
         	minPrice  : action.minPrice,
-        	highPrice : action.highPrice
+        	maxPrice  : action.maxPrice
       	};
 
-    case actionTypes.CHANGE_MODEL:
+    case actionTypes.FILTER_PRODUCTS_BY_MODEL:
     	return {
-        	...state,
-        	model: action.payload,
-      	};
+        ...state,
+        filteredItems: action.payload.items,
+        size: action.payload.size,
+      };
 
-    case actionTypes.CHANGE_BRAND:
+    case actionTypes.FILTER_PRODUCTS_BY_BRAND:
     	return {
         	...state,
         	brand: action.payload,
