@@ -24,7 +24,7 @@ class Filters extends Component {
     componentDidMount(){
         let brands = [];
 
-        this.props.products.forEach(item => {
+        this.props.products && this.props.products.forEach(item => {
             if(brands.includes(item.brand) == false){
                 brands.push(item.brand);
             }
