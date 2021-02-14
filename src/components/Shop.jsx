@@ -18,7 +18,6 @@ class ShopComponent extends Component {
         this.state = {
             filteredProductsList : [],
             page : 1,
-            loading : false,
             prevY : 0
         };
     }
