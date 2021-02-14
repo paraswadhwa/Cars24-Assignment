@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { withStyles,Grid,TextField } from '@material-ui/core';
 import Product from './Product';
 import SearchBox from './SearchBox';
@@ -16,8 +16,10 @@ class ShopComponent extends Component {
         this.props = props;
 
         this.state = {
-            searchTerm           : "",
-            filteredProductsList : []
+            filteredProductsList : [],
+            page : 1,
+            loading : false,
+            prevY : 0
         };
     }
 
@@ -31,8 +33,24 @@ class ShopComponent extends Component {
             });
         }
         else {
-            this.props.fetchProducts();
+            this.props.fetchProducts(this.state.page);
         }
+
+        // Options
+        var options = {
+            root: null, // Page as root
+            rootMargin: '0px',
+            threshold: 1.0
+        };
+
+        // Create an observer
+        this.observer = new IntersectionObserver(
+            this.handleObserver.bind(this), //callback
+            options
+        );
+        
+        //Observ the `loadingRef`
+        this.observer.observe(this.loadingRef);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -44,6 +62,17 @@ class ShopComponent extends Component {
                 });
             }
         }
+    }
+
+    handleObserver(entities, observer) {
+        const y = entities[0].boundingClientRect.y;
+
+        if (this.state.prevY > y) {
+            const curPage = this.state.page + 1;
+            this.props.fetchProducts(curPage);
+            this.setState({ page: curPage });
+        }
+        this.setState({ prevY: y });
     }
     
     render() {
@@ -60,6 +89,9 @@ class ShopComponent extends Component {
                         <Product item={item} key={item.id}/>
                     ))}
                 </Grid> 
+                <div
+                    ref={loadingRef => (this.loadingRef = loadingRef)}
+                />
             </div>
         )
     }

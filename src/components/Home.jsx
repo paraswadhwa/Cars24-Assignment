@@ -9,7 +9,7 @@ class HomeComponent extends Component {
     render() {
         return (
             <div>
-                <Grid container spacing={24}>
+                <Grid container>
                     <Grid item xs={9}>
                         <ShopContainer />
                     </Grid>

@@ -23,8 +23,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
 
-    fetchProducts() {
-        dispatch(fetchProducts());
+    fetchProducts(currentPage) {
+        dispatch(fetchProducts(currentPage));
     },
     updateFilteredProducts(data) {
         dispatch(updateFilteredProducts(data));

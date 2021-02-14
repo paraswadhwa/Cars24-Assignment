@@ -1,16 +1,19 @@
 import * as actions from './index';
 
-export const fetchProducts = () => async (dispatch) => {
+export const fetchProducts = (currentPage) => async (dispatch) => {
 
     try{
-        let response = await fetch("products.json",{
+        let response = await fetch(`http://localhost:3001/fetch?currentPage=${currentPage}&pageSize=6`,{
           headers : { 
             'Content-Type': 'application/json',
             'Accept': 'application/json'
            }
         });
         response = await response.json();
-        dispatch(actions.fetchProducts(response));
+
+        if(response.data.length > 0){
+            dispatch(actions.fetchProducts(response.data));
+        }
     }
     catch(ex){
         console.log(ex);

@@ -1,6 +1,9 @@
 import * as actionTypes from '../constants/actionTypes';
 
-const initialState = {};
+const initialState = {
+    products         : [],
+    filteredProducts : []
+};
 
 export default function (state = initialState, action) {
 
@@ -10,8 +13,8 @@ export default function (state = initialState, action) {
         
         return { 
             ...state, 
-            products         : action.payload,
-            filteredProducts : action.payload
+            products         : state.products.concat(action.payload),
+            filteredProducts : state.filteredProducts.concat(action.payload)
         };
 
     case actionTypes.UPDATE_FILTERED_PRODUCTS:

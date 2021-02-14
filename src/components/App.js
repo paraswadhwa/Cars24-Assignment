@@ -28,7 +28,7 @@ class App extends Component {
                 <div className={classes.root}>
                     <AppBar position="static" color="primary">
                         <Toolbar>
-                            <Typography variant="title" className="title" color="inherit">
+                            <Typography className="title" color="inherit">
                                 E- Commerce Application
                             </Typography>
                         </Toolbar>

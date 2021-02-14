@@ -48,10 +48,10 @@ class Product extends Component {
                         title     = {item.name}
                     />
                     <CardContent>
-                        <Typography gutterBottom variant="headline" component="h4" align ="center">
+                        <Typography gutterBottom align ="center">
                             Brand : {item.brand}
                         </Typography>
-                        <Typography gutterBottom variant="headline" component="h4" align ="center">
+                        <Typography gutterBottom align ="center">
                             Model : {item.model}
                         </Typography>
                         <Typography component="p" align ="center">
