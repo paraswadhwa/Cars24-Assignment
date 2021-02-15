@@ -6,6 +6,8 @@ const data = require('./public/products');
 
 app.use(cors());
 
+app.use(express.static('public'))
+
 app.use('/fetch',function (req, res, next) {
 
     const { query: { currentPage, pageSize } } = req;

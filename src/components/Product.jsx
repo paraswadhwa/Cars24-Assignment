@@ -44,15 +44,12 @@ class Product extends Component {
                 <Card className={classes.card} key={item.id}>
                     <CardMedia
                         className = {classes.media}
-                        image     = {item.pictureURL}
+                        image     = {"http://localhost:3001/images/" + item.image}
                         title     = {item.name}
                     />
                     <CardContent>
                         <Typography gutterBottom align ="center">
-                            Brand : {item.brand}
-                        </Typography>
-                        <Typography gutterBottom align ="center">
-                            Model : {item.model}
+                            {item.brand + " " + item.model} 
                         </Typography>
                         <Typography component="p" align ="center">
                             Price : Rs. {item.price}
