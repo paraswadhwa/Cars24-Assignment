@@ -84,6 +84,7 @@ class ShopComponent extends Component {
                         filteredProducts       = {this.props.filteredProducts}
                         products               = {this.props.products}
                         updateFilteredProducts = {this.props.updateFilteredProducts}
+                        isFilterActive         = {this.props.isFilterActive}
                     />
                 </Container>
                 <Grid container spacing={16}> 

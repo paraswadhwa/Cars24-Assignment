@@ -38,13 +38,14 @@ class SearchBoxComponent extends Component {
             <div className={classes.root}>
                 <TextField
                     id      = "outlined-search"
-                    label   = "Search"
+                    label   = "Search - Brand/Model"
                     className ={classes.range}
                     value   = {this.state.searchTerm}
                     name    = "searchBox"
                     margin  = "normal"
                     variant = "outlined"
                     onChange={(e) => this.updateSearchTerm(e)}
+                    disabled={this.props.isFilterActive}
                 />
             </div>
         )

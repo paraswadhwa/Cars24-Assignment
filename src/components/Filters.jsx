@@ -79,21 +79,25 @@ class Filters extends Component {
 
         let filteredItems = this.props.products;
 
-        if(this.state.minRange && this.state.maxRange){
-            filteredItems = this.filterProductsByPriceRange(filteredItems);
-        }
-        if(this.state.brand){
-            filteredItems = this.filterProductsByBrand(filteredItems);
-        }
+        if((this.state.minRange && this.state.maxRange) || this.state.brand){
+            // any of the filter is applied
 
-        this.props.updateFilteredProducts(filteredItems);
-        this.props.updateFilterDetails({
-            isActive : true,
-            brand    : this.state.brand,
-            minRange : this.state.minRange,
-            maxRange : this.state.minRange
-        });
-        this.setState({filters : true});
+            if(this.state.minRange && this.state.maxRange){
+                filteredItems = this.filterProductsByPriceRange(filteredItems);
+            }
+            if(this.state.brand){
+                filteredItems = this.filterProductsByBrand(filteredItems);
+            }
+
+            this.props.updateFilteredProducts(filteredItems);
+            this.props.updateFilterDetails({
+                isActive : true,
+                brand    : this.state.brand,
+                minRange : this.state.minRange,
+                maxRange : this.state.maxRange
+            });
+            this.setState({filters : true});
+        }
     }
 
     clearFilters = () => {
