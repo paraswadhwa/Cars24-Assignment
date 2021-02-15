@@ -43,9 +43,11 @@ Runs a basic express server at port 3001. This is created to serve products requ
 	   you scroll down.
 	2. The filters can be applied on the products available on the basis of either price range or the 
 	   brand.
-	3. Once the filters are applied, the filter boxes and the search box gets disabled and you need to 
+	3. Products can be searched on the basis of brand or the model.
+	   (Eg : Brand -> Maruti Suzuki , Model -> Swift)
+	4. Once the filters are applied, the filter boxes and the search box gets disabled and you need to 
 	   clear the applied filters before using them again.
-	4. Filtered products are preserved after the page reload as well.
+	5. Filtered products are preserved after the page reload as well.
 
 
 # Screenshots
