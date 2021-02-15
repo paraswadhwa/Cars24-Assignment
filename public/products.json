@@ -103,5 +103,68 @@
 	  "brand"       : "Mahindra",
 	  "price"		: 2000000,
 	  "image"		: "scorpio.webp"
+	},
+	{
+	  "id"			: 16,
+	  "model"		: "Sonet",
+	  "brand"       : "Kia",
+	  "price"		: 1200000,
+	  "image"		: "sonet.webp"
+	},
+	{
+	  "id"			: 17,
+	  "model"		: "Creta",
+	  "brand"       : "Hyundai",
+	  "price"		: 1600000,
+	  "image"		: "creta.webp"
+	},
+	{
+	  "id"			: 18,
+	  "model"		: "Seltos",
+	  "brand"       : "Kia",
+	  "price"		: 1900000,
+	  "image"		: "seltos.webp"
+	},
+	{
+	  "id"			: 19,
+	  "model"		: "Baleno",
+	  "brand"       : "Maruti Suzuki",
+	  "price"		: 750000,
+	  "image"		: "baleno.webp"
+	},
+	{
+	  "id"			: 20,
+	  "model"		: "Brezza",
+	  "brand"       : "Maruti Suzuki",
+	  "price"		: 1200000,
+	  "image"		: "brezza.webp"
+	},
+	{
+	  "id"			: 21,
+	  "model"		: "Thar",
+	  "brand"       : "Mahindra",
+	  "price"		: 1600000,
+	  "image"		: "thar.webp"
+	},
+	{
+	  "id"			: 22,
+	  "model"		: "Ciaz",
+	  "brand"       : "Maruti Suzuki",
+	  "price"		: 1200000,
+	  "image"		: "ciaz.webp"
+	},
+	{
+	  "id"			: 23,
+	  "model"		: "Civic",
+	  "brand"       : "Honda",
+	  "price"		: 1800000,
+	  "image"		: "civic.webp"
+	},
+	{
+	  "id"			: 24,
+	  "model"		: "Q2",
+	  "brand"       : "Audi",
+	  "price"		: 4600000,
+	  "image"		: "audi-q2.webp"
 	}
 ]

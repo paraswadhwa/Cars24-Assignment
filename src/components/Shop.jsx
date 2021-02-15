@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withStyles,Grid,TextField } from '@material-ui/core';
+import { withStyles,Grid,TextField,Container } from '@material-ui/core';
 import Product from './Product';
 import SearchBox from './SearchBox';
 
@@ -79,11 +79,13 @@ class ShopComponent extends Component {
         const { classes } = this.props;
         return (
             <div className={classes.root}>
-                <SearchBox 
-                    filteredProducts       = {this.props.filteredProducts}
-                    products               = {this.props.products}
-                    updateFilteredProducts = {this.props.updateFilteredProducts}
-                />
+                <Container>
+                    <SearchBox 
+                        filteredProducts       = {this.props.filteredProducts}
+                        products               = {this.props.products}
+                        updateFilteredProducts = {this.props.updateFilteredProducts}
+                    />
+                </Container>
                 <Grid container spacing={16}> 
                     {this.state.filteredProductsList.map(item => (
                         <Product item={item} key={item.id}/>
