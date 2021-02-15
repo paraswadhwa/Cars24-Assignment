@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withStyles,Grid,TextField,Container } from '@material-ui/core';
-import Product from './Product';
+import Item      from './Item';
 import SearchBox from './SearchBox';
 
 const styles = theme => ({
@@ -9,7 +9,7 @@ const styles = theme => ({
     }
 });
 
-class ShopComponent extends Component {
+class ProductsComponent extends Component {
 
     constructor(props){
         super(props);
@@ -87,9 +87,9 @@ class ShopComponent extends Component {
                         isFilterActive         = {this.props.isFilterActive}
                     />
                 </Container>
-                <Grid container spacing={16}> 
+                <Grid container> 
                     {this.state.filteredProductsList.map(item => (
-                        <Product item={item} key={item.id}/>
+                        <Item item={item} key={item.id}/>
                     ))}
                 </Grid>
                 <div
@@ -100,4 +100,4 @@ class ShopComponent extends Component {
     }
 }
 
-export default withStyles(styles)(ShopComponent)
+export default withStyles(styles)(ProductsComponent)

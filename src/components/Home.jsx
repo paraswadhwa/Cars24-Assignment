@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import Grid from '@material-ui/core/Grid';
-import ShopContainer from '../containers/ShopContainer';
-import FiltersContainer from '../containers/FiltersContainer';
+import Grid               from '@material-ui/core/Grid';
+import ProductsContainer  from '../containers/ProductsContainer';
+import FiltersContainer   from '../containers/FiltersContainer';
 
 class HomeComponent extends Component {
 
@@ -11,7 +10,7 @@ class HomeComponent extends Component {
             <div>
                 <Grid container>
                     <Grid item xs={9}>
-                        <ShopContainer />
+                        <ProductsContainer />
                     </Grid>
 
                     <Grid item xs={3}>

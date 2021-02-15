@@ -1,6 +1,6 @@
 import { connect }          from 'react-redux';
 import { withRouter }       from 'react-router-dom';
-import Shop              	from '../components/Shop';
+import Products            	from '../components/Products';
 
 import { 
     fetchProducts,
@@ -8,8 +8,8 @@ import {
 }                           from "../actions/productActions";
 
 
-const ShopContainer = props => {
-    return <Shop {...props} />
+const ProductsContainer = props => {
+    return <Products {...props} />
 };
 
 const mapStateToProps = state => {
@@ -33,4 +33,4 @@ const mapDispatchToProps = dispatch => ({
 
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ShopContainer));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProductsContainer));

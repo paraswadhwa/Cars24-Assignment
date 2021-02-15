@@ -11,7 +11,7 @@ const styles = theme => ({
   }
 });
 
-class Filters extends Component {
+class FiltersComponent extends Component {
 
     constructor(props){
         super(props);
@@ -200,4 +200,4 @@ class Filters extends Component {
     }
 }
 
-export default withStyles(styles)(Filters)
+export default withStyles(styles)(FiltersComponent)

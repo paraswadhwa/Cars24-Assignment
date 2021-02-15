@@ -30,7 +30,7 @@ const styles = theme => ({
 });
 
 
-class Product extends Component {
+class ItemComponent extends Component {
 
     constructor(props) {
         super(props);
@@ -63,9 +63,9 @@ class Product extends Component {
 }
 
 
-Product.propTypes = {
+ItemComponent.propTypes = {
     classes: PropTypes.object.isRequired,
     item: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(Product)
+export default withStyles(styles)(ItemComponent)
