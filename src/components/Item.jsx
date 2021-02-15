@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -61,12 +60,6 @@ class ItemComponent extends Component {
         )
     }
     
-}
-
-
-ItemComponent.propTypes = {
-    classes: PropTypes.object.isRequired,
-    item: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(ItemComponent)
