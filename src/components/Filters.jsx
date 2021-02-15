@@ -179,6 +179,7 @@ class Filters extends Component {
             </Select>
             <br/>
             <br/>
+            <br/>
 
             {
                 this.state.filters == false ? 

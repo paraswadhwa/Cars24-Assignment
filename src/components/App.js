@@ -29,7 +29,7 @@ class App extends Component {
                     <AppBar position="static" color="primary">
                         <Toolbar>
                             <Typography className="title" color="inherit">
-                                E- Commerce Application
+                                Cars24
                             </Typography>
                         </Toolbar>
                     </AppBar>

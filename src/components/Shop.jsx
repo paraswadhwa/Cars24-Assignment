@@ -90,7 +90,7 @@ class ShopComponent extends Component {
                     {this.state.filteredProductsList.map(item => (
                         <Product item={item} key={item.id}/>
                     ))}
-                </Grid> 
+                </Grid>
                 <div
                     ref={loadingRef => (this.loadingRef = loadingRef)}
                 />
