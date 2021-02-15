@@ -1,9 +1,10 @@
 import * as actions from './index';
+import { API_BASE_URL } from '../constants/apiConstants';
 
 export const fetchProducts = (currentPage) => async (dispatch) => {
 
     try{
-        let response = await fetch(`http://localhost:3001/fetch?currentPage=${currentPage}&pageSize=6`,{
+        let response = await fetch(`${API_BASE_URL}/fetch?currentPage=${currentPage}&pageSize=6`,{
           headers : { 
             'Content-Type': 'application/json',
             'Accept': 'application/json'
