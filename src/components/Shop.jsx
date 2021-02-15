@@ -66,7 +66,7 @@ class ShopComponent extends Component {
     handleObserver(entities, observer) {
         const y = entities[0].boundingClientRect.y;
 
-        if (this.state.prevY > y && this.props.products.length == this.state.filteredProductsList.length) {
+        if (this.state.prevY > y && this.props.products.length == this.state.filteredProductsList.length && this.props.isFilterActive == false) {
             // scroll only when there is no search filter
             const curPage = Math.floor(this.state.filteredProductsList.length/5) + 1;
             this.props.fetchProducts(curPage);

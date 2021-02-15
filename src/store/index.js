@@ -21,7 +21,7 @@ middlewares.push(thunkMiddleware);
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['inventoryReducer']
+  whitelist: ['inventoryReducer','filtersReducer']
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -1,11 +1,15 @@
 import React,{Component} from 'react';
 import { withStyles,Select,MenuItem,TextField,Typography,Button,InputLabel} from '@material-ui/core';
 
-const styles = {
-  range: {
+const styles = theme => ({
+    range: {
     width: '50%'
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+    minWidth: 120
   }
-};
+});
 
 class Filters extends Component {
 
@@ -17,7 +21,8 @@ class Filters extends Component {
             minRange : "",
             maxRange : "",
             brand    : "",
-            brandsList : []
+            brandsList : [],
+            filters  : false
         }
     }
 
@@ -29,6 +34,15 @@ class Filters extends Component {
                 brands.push(item.brand);
             }
         });
+
+        if(this.props.filtersReducer){
+            this.setState({
+                minRange : this.props.filtersReducer.minRange,
+                maxRange : this.props.filtersReducer.maxRange,
+                brand    : this.props.filtersReducer.brand,
+                filters  : this.props.filtersReducer.isActive,
+            })
+        }
 
         this.setState({brandsList : brands});
     }
@@ -73,6 +87,13 @@ class Filters extends Component {
         }
 
         this.props.updateFilteredProducts(filteredItems);
+        this.props.updateFilterDetails({
+            isActive : true,
+            brand    : this.state.brand,
+            minRange : this.state.minRange,
+            maxRange : this.state.minRange
+        });
+        this.setState({filters : true});
     }
 
     clearFilters = () => {
@@ -80,6 +101,13 @@ class Filters extends Component {
         this.setState({minRange : "", maxRange : "", brand : ""});
 
         this.props.updateFilteredProducts(this.props.products);
+        this.props.updateFilterDetails({
+            isActive : false,
+            brand    : "",
+            minRange : "",
+            maxRange : ""
+        });
+        this.setState({filters : false});
     }
 
     filterProductsByPriceRange = (products) => {
@@ -116,6 +144,7 @@ class Filters extends Component {
                 margin  = "normal"
                 variant = "outlined"
                 onChange={e => this.addFilter(e.target)}
+                disabled = { this.state.filters}
             />
             <TextField
               id      ="outlined-name"
@@ -126,6 +155,7 @@ class Filters extends Component {
               onChange={e => this.addFilter(e.target)}
               margin  ="normal"
               variant ="outlined"
+              disabled = { this.state.filters}
             />
             <br/>
             <br/>
@@ -136,6 +166,8 @@ class Filters extends Component {
                 value={this.state.brand}
                 name="brand"
                 onChange={e => this.addFilter(e.target)}
+                className={this.props.classes.selectEmpty}
+                disabled = { this.state.filters}
             >
                 {
                     this.state.brandsList.map((item,index) => {
@@ -147,14 +179,17 @@ class Filters extends Component {
             </Select>
             <br/>
             <br/>
-            <Button variant="contained" color="primary" onClick={this.applyFilters}>
-                Apply Filters
-            </Button>
-            <br/>
-            <br/>
-            <Button variant="contained" color="primary" onClick={this.clearFilters}>
-                Clear Filters
-            </Button>
+
+            {
+                this.state.filters == false ? 
+                <Button variant="contained" color="primary" onClick={this.applyFilters}>
+                    Apply Filters
+                </Button>
+                : 
+                <Button variant="contained" color="primary" onClick={this.clearFilters}>
+                    Clear Filters
+                </Button>
+            }
             </>
         )
     }

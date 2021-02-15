@@ -13,11 +13,12 @@ const ShopContainer = props => {
 };
 
 const mapStateToProps = state => {
-    const { inventoryReducer } = state;
+    const { inventoryReducer,filtersReducer } = state;
 
     return {
         filteredProducts : inventoryReducer.filteredProducts,
-        products 		 : inventoryReducer.products
+        products 		 : inventoryReducer.products,
+        isFilterActive   : filtersReducer.isActive
     }
 };
 

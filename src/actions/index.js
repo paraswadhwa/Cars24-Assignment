@@ -15,3 +15,11 @@ export const updateFilteredProducts = (data) => {
     	payload : data 
     };
 }
+
+export const updateFilterDetails = (data) => {
+    
+    return { 
+    	type    : actionTypes.SET_FILTER_DETAILS, 
+    	payload : data 
+    };
+}

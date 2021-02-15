@@ -6,17 +6,22 @@ import {
     updateFilteredProducts
 }                           from "../actions/productActions";
 
+import {
+    updateFilterDetails
+}                           from "../actions/filterActions";
+
 
 const FiltersContainer = props => {
     return <Filters {...props} />
 };
 
 const mapStateToProps = state => {
-    const { inventoryReducer } = state;
+    const { inventoryReducer,filtersReducer } = state;
 
     return {
         filteredProducts : inventoryReducer.filteredProducts,
-        products 		 : inventoryReducer.products
+        products 		 : inventoryReducer.products,
+        filtersReducer   : filtersReducer
     }
 };
 
@@ -24,6 +29,9 @@ const mapDispatchToProps = dispatch => ({
 
     updateFilteredProducts(data) {
         dispatch(updateFilteredProducts(data));
+    },
+    updateFilterDetails(data) {
+        dispatch(updateFilterDetails(data));
     }
 
 });
