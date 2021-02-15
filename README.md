@@ -42,13 +42,14 @@ Runs a basic express server at port 3001. This is created to serve products requ
 	1. The main page displays all the products available at the moment and more products are fetched as 
 	   you scroll down.
 	2. The products are fetched from json file at path -> public/products.json using a backend REST API.
-	3. The filters can be applied on the products available on the basis of either price range or the 
+	3. Infinite Scroll Feature is implemented using the IntersectionObserver API.
+	4. The filters can be applied on the products available on the basis of either price range or the 
 	   brand.
-	4. Products can be searched on the basis of brand or the model.
+	5. Products can be searched on the basis of brand or the model.
 	   (Eg : Brand -> Maruti Suzuki , Model -> Swift)
-	5. Once the filters are applied, the filter boxes and the search box gets disabled and you need to 
+	6. Once the filters are applied, the filter boxes and the search box gets disabled and you need to 
 	   clear the applied filters before using them again.
-	6. Filtered products are preserved after the page reload as well.
+	7. Filtered products are preserved after the page reload as well.
 
 
 # Screenshots
