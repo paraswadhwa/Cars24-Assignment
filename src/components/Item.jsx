@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import { API_BASE_URL } from '../constants/apiConstants';
 
 const styles = theme => ({
     card: {
@@ -44,7 +45,7 @@ class ItemComponent extends Component {
                 <Card className={classes.card} key={item.id}>
                     <CardMedia
                         className = {classes.media}
-                        image     = {"http://localhost:3001/images/" + item.image}
+                        image     = {`${API_BASE_URL}/images/${item.image}`}
                         title     = {item.name}
                     />
                     <CardContent>

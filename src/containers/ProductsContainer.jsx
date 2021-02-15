@@ -1,6 +1,6 @@
 import { connect }          from 'react-redux';
 import { withRouter }       from 'react-router-dom';
-import Products            	from '../components/Products';
+import Products             from '../components/Products';
 
 import { 
     fetchProducts,
@@ -17,7 +17,7 @@ const mapStateToProps = state => {
 
     return {
         filteredProducts : inventoryReducer.filteredProducts,
-        products 		 : inventoryReducer.products,
+        products         : inventoryReducer.products,
         isFilterActive   : filtersReducer.isActive
     }
 };
