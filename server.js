@@ -1,12 +1,12 @@
-const express = require('express');
-const app = express();
-var cors = require('cors');
+const express      = require('express');
+var cors 	       = require('cors');
 const paginateInfo = require('paginate-info');
-const data = require('./public/products');
+const data         = require('./public/products');
+const app          = express();
 
 app.use(cors());
 
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 app.use('/fetch',function (req, res, next) {
 
@@ -19,7 +19,6 @@ app.use('/fetch',function (req, res, next) {
 	return res.status(200).json({
 		success: true,
 		data : paginatedData
-	    // data: { result: paginatedData, meta: paginationInfo }
 	});
 });
 
