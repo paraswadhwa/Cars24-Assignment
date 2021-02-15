@@ -67,7 +67,7 @@ class ShopComponent extends Component {
         const y = entities[0].boundingClientRect.y;
 
         if (this.state.prevY > y) {
-            const curPage = this.state.page + 1;
+            const curPage = Math.floor(this.state.filteredProductsList.length/5) + 1;
             this.props.fetchProducts(curPage);
             this.setState({ page: curPage });
         }
