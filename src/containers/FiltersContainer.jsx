@@ -1,6 +1,6 @@
 import { connect }          from 'react-redux';
 import { withRouter }       from 'react-router-dom';
-import Filters            	from '../components/Filters';
+import Filters              from '../components/Filters';
 
 import { 
     updateFilteredProducts
@@ -20,7 +20,7 @@ const mapStateToProps = state => {
 
     return {
         filteredProducts : inventoryReducer.filteredProducts,
-        products 		 : inventoryReducer.products,
+        products         : inventoryReducer.products,
         filtersReducer   : filtersReducer
     }
 };
