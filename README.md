@@ -45,6 +45,7 @@ Runs a basic express server at port 3001. This is created to serve products requ
 	   brand.
 	3. Once the filters are applied, the filter boxes and the search box gets disabled and you need to 
 	   clear the applied filters before using them again.
+	4. Filtered products are preserved after the page reload as well.
 
 
 # Screenshots
