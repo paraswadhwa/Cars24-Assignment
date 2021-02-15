@@ -41,7 +41,7 @@ Runs a basic express server at port 3001. This is created to serve products requ
 
 	1. The main page displays all the products available at the moment and more products are fetched as 
 	   you scroll down.
-	2. The products are fetch from json file at path -> public/products.json using a backend REST API.
+	2. The products are fetched from json file at path -> public/products.json using a backend REST API.
 	3. The filters can be applied on the products available on the basis of either price range or the 
 	   brand.
 	4. Products can be searched on the basis of brand or the model.
