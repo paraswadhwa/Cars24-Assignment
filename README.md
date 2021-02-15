@@ -10,8 +10,9 @@
 ## Steps to run the project
 	
 	1. Enter the project directory
-	2. Run `node server.js`
-	3. Run `npm start`
+	2. Run `npm install`
+	3. Run `node server.js`
+	4. Run `npm start`
 
 ## Available Scripts
 
