@@ -50,10 +50,14 @@ Runs a basic express server at port 3001. This is created to serve products requ
 
 # Screenshots
 
-Sign Up Page:
+Products Page:
 
 ![](screenshots/Mainpage.png)
 
+Search Applied:
+
 ![](screenshots/Search_products.png)
+
+Filters Applied:
 
 ![](screenshots/Filtered_products.png)
