@@ -1,0 +1,170 @@
+[
+	{
+	  "id"			: 1,
+	  "model"		: "Alto",
+	  "brand"		: "Maruti Suzuki",
+	  "price"		: 250000,
+	  "image"		: "alto.webp"
+	},
+	{
+	  "id"			: 2,
+	  "model"		: "Swift",
+	  "brand"		: "Maruti Suzuki",
+	  "price"		: 400000,
+	  "image"		: "swift.gif"
+	},
+	{
+	  "id"			: 3,
+	  "model"		: "Swift Dzire",
+	  "brand"		: "Maruti Suzuki",
+	  "price"		: 500000,
+	  "image"		: "dzire.webp"
+	},
+	{
+	  "id"			: 4,
+	  "model"		: "Santro",
+	  "brand"		: "Hyundai",
+	  "price"		: 350000,
+	  "image"		: "santro.webp"
+	},
+	{
+	  "id"			: 5,
+	  "model"		: "Verna",
+	  "brand"		: "Hyundai",
+	  "price"		: 800000,
+	  "image"		: "verna.webp"
+	},
+	{
+	  "id"			: 6,
+	  "model"		: "City",
+	  "brand"		: "Honda",
+	  "price"		: 1500000,
+	  "image"		: "city.webp"
+	},
+	{
+	  "id"			: 7,
+	  "model"		: "Amaze",
+	  "brand"		: "Honda",
+	  "price"		: 700000,
+	  "image"		: "amaze.webp"
+	},
+	{
+	  "id"			: 8,
+	  "model"		: "Tiago",
+	  "brand"		: "Tata",
+	  "price"		: 600000,
+	  "image"		: "tiago.webp"
+	},
+	{
+	  "id"			: 9,
+	  "model"		: "Nexon",
+	  "brand"		: "Tata",
+	  "price"		: 800000,
+	  "image"		: "nexon.webp"
+	},
+	{
+	  "id"			: 10,
+	  "model"		: "Harrier",
+	  "brand"		: "Tata",
+	  "price"		: 1700000,
+	  "image"		: "harrier.webp"
+	},
+	{
+	  "id"			: 11,
+	  "model"		: "Yaris",
+	  "brand"		: "Toyota",
+	  "price"		: 2000000,
+	  "image"		: "yaris.webp"
+	},
+	{
+	  "id"			: 12,
+	  "model"		: "Fortuner",
+	  "brand"		: "Toyota",
+	  "price"		: 3500000,
+	  "image"		: "fortuner.webp"
+	},
+	{
+	  "id"			: 13,
+	  "model"		: "Innova",
+	  "brand"		: "Toyota",
+	  "price"		: 3000000,
+	  "image"		: "innova.webp"
+	},
+	{
+	  "id"			: 14,
+	  "model"		: "Ecosport",
+	  "brand"		: "Ford",
+	  "price"		: 1500000,
+	  "image"		: "ecosport.webp"
+	},
+	{
+	  "id"			: 15,
+	  "model"		: "Scorpio",
+	  "brand"		: "Mahindra",
+	  "price"		: 2000000,
+	  "image"		: "scorpio.webp"
+	},
+	{
+	  "id"			: 16,
+	  "model"		: "Sonet",
+	  "brand"		: "Kia",
+	  "price"		: 1200000,
+	  "image"		: "sonet.webp"
+	},
+	{
+	  "id"			: 17,
+	  "model"		: "Creta",
+	  "brand"		: "Hyundai",
+	  "price"		: 1600000,
+	  "image"		: "creta.webp"
+	},
+	{
+	  "id"			: 18,
+	  "model"		: "Seltos",
+	  "brand"		: "Kia",
+	  "price"		: 1900000,
+	  "image"		: "seltos.webp"
+	},
+	{
+	  "id"			: 19,
+	  "model"		: "Baleno",
+	  "brand"		: "Maruti Suzuki",
+	  "price"		: 750000,
+	  "image"		: "baleno.webp"
+	},
+	{
+	  "id"			: 20,
+	  "model"		: "Brezza",
+	  "brand"		: "Maruti Suzuki",
+	  "price"		: 1200000,
+	  "image"		: "brezza.webp"
+	},
+	{
+	  "id"			: 21,
+	  "model"		: "Thar",
+	  "brand"		: "Mahindra",
+	  "price"		: 1600000,
+	  "image"		: "thar.webp"
+	},
+	{
+	  "id"			: 22,
+	  "model"		: "Ciaz",
+	  "brand"		: "Maruti Suzuki",
+	  "price"		: 1200000,
+	  "image"		: "ciaz.webp"
+	},
+	{
+	  "id"			: 23,
+	  "model"		: "Civic",
+	  "brand"		: "Honda",
+	  "price"		: 1800000,
+	  "image"		: "civic.webp"
+	},
+	{
+	  "id"			: 24,
+	  "model"		: "Q2",
+	  "brand"		: "Audi",
+	  "price"		: 4600000,
+	  "image"		: "audi-q2.webp"
+	}
+]

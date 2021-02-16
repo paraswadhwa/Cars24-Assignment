@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/Cars24-Assignment/static/js/main.685cc1ee.chunk.js",
+    "main.js.map": "/Cars24-Assignment/static/js/main.685cc1ee.chunk.js.map",
+    "runtime-main.js": "/Cars24-Assignment/static/js/runtime-main.9f7cb4c5.js",
+    "runtime-main.js.map": "/Cars24-Assignment/static/js/runtime-main.9f7cb4c5.js.map",
+    "static/js/2.276deb6c.chunk.js": "/Cars24-Assignment/static/js/2.276deb6c.chunk.js",
+    "static/js/2.276deb6c.chunk.js.map": "/Cars24-Assignment/static/js/2.276deb6c.chunk.js.map",
+    "index.html": "/Cars24-Assignment/index.html",
+    "static/js/2.276deb6c.chunk.js.LICENSE.txt": "/Cars24-Assignment/static/js/2.276deb6c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9f7cb4c5.js",
+    "static/js/2.276deb6c.chunk.js",
+    "static/js/main.685cc1ee.chunk.js"
+  ]
+}
