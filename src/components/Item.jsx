@@ -52,7 +52,10 @@ class ItemComponent extends Component {
                             {item.brand + " " + item.model} 
                         </Typography>
                         <Typography component="p" align ="center">
-                            Price : Rs. {item.price}
+                            Price : {new Intl.NumberFormat('en-IN', {
+                                            style: 'currency',
+                                            currency: 'INR',
+                                            maximumSignificantDigits: 3}).format(item.price)}
                         </Typography>
                     </CardContent>
                 </Card>
